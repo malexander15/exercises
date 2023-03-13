@@ -26,7 +26,16 @@ def count_empty_seats(chart)
 end
 
 def find_favorite(array_of_hash_objects)
-  # take an array_of_hash_objects and return the hash which has the key/value
+  array_of_hash_objects.each do |h|
+    h.each do |k,v|
+      if k == :is_my_favorite? && v == true
+      return h
+      end
+    end
+  end
+  return nil
+
+      # take an array_of_hash_objects and return the hash which has the key/value
   # pair :is_my_favorite? => true. If no hash returns the value true to the key
   # :is_my_favorite? it should return nil
 
